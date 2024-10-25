@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción de Curso</title>
+    <link rel="stylesheet" href="estilo4.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Inscripción de Curso</h2>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <label for="gmail">Gmail:</label>
+        <input type="email" id="gmail" required>
+
+        <label for="telefono">Número Telefónico:</label>
+        <input type="tel" id="telefono" placeholder="Ej: 123456789" required>
+
+        <label for="nivel-educativo">Nivel Educativo:</label>
+        <select id="nivel-educativo" required>
+            <option value="" disabled selected>Selecciona...</option>
+            <option value="primaria">Primaria</option>
+            <option value="secundaria">Secundaria</option>
+            <option value="universitario">Universitario</option>
+            <option value="ninguna">Ninguna de las anteriores</option>
+        </select>
+
+        <label for="modalidad">Preferencia de Modalidad:</label>
+        <select id="modalidad" required>
+            <option value="" disabled selected>Selecciona...</option>
+            <option value="presencial">Presencial</option>
+            <option value="virtual">Virtual</option>
+            <option value="hibrido">Híbrido (Presencial y Virtual)</option>
+        </select>
+
+        <label for="curso">Elegir un Curso:</label>
+        <select id="curso" required>
+            <option value="" disabled selected>Selecciona...</option>
+            <option value="ingles">Inglés</option>
+            <option value="matematica">Matemática</option>
+            <option value="lenguaje">Lenguaje</option>
+            <option value="quimica">Química</option>
+        </select>
+
+        <label for="horario">Seleccionar Horario:</label>
+        <select id="horario" required>
+            <option value="" disabled selected>Selecciona...</option>
+            <option value="manana">Mañana</option>
+            <option value="tarde">Tarde</option>
+            <option value="noche">Noche</option>
+        </select>
+
+        <label for="metodo-pago">Seleccionar Método de Pago:</label>
+        <select id="metodo-pago" required>
+            <option value="" disabled selected>Selecciona...</option>
+            <option value="transferencia">Transferencia</option>
+            <option value="tarjeta-credito">Tarjeta de Crédito</option>
+            <option value="paypal">PayPal</option>
+            <option value="otro">Otro Método</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+    </form>
+    
+    <!-- Código de la animación -->
+    <div class="bound"></div>
+    <div class="main_spinner">
+        <div class="center_mass"></div>
+        <div class="dot dot_1"></div>
+        <div class="dot dot_2"></div>
+    </div>
+
+</div>
+
+</body>
+</html>
