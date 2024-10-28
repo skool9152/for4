@@ -1,0 +1,146 @@
+:root {
+    --dot-color: white;
+    --center-mass-size: 25px;
+    --background-color: #03678D;
+    --small-dot-color: rgba(3, 103, 141, 0.6);
+    --speed: 1s;
+    --double-speed: calc(var(--speed) * 2);
+}
+
+@keyframes bg {
+    from {
+        background-color: #024b6b; /* Darken version */
+    }
+}
+
+body, html {
+    height: 100%;
+    margin: 0; /* Asegúrate de que no haya márgenes por defecto */
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    background-image: 
+        radial-gradient(circle at top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), 
+        linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    animation: var(--double-speed) bg ease infinite alternate;
+}
+
+.main_spinner {
+    animation: var(--double-speed) spin linear infinite;
+    width: 150px;
+    position: relative; /* Para que los elementos hijos se posicionen correctamente */
+}
+
+.dot {
+    animation: var(--speed) backspin linear infinite;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    box-shadow: 
+        0 112px var(--dot-color), 
+        0 -112px var(--dot-color), 
+        112px 0 var(--dot-color), 
+        -112px 0 var(--dot-color);
+}
+
+.dot_1 {
+    left: 0;
+}
+
+.dot_2 {
+    right: 0;
+}
+
+.center_mass {
+    position: absolute;
+    width: var(--center-mass-size);
+    height: var(--center-mass-size);
+    left: 50%;
+    top: 50%;
+    margin-top: calc(var(--center-mass-size) * -0.5);
+    margin-left: calc(var(--center-mass-size) * -0.5);
+    background: var(--small-dot-color);
+    border-radius: 50%;
+    box-shadow: 
+        100px 0 var(--small-dot-color), 
+        -100px 0 var(--small-dot-color);
+}
+
+@keyframes spin {
+    0% { 
+        transform: rotate(0deg) scale(1);
+    }
+    50% { 
+        transform: rotate(180deg) scale(0.9);
+    }
+    100% { 
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes backspin {
+    0% { 
+        transform: rotate(0deg) scale(1);
+    }
+    50% { 
+        transform: rotate(-180deg) scale(0.9);
+    }
+    100% { 
+        transform: rotate(-360deg) scale(1);
+    }
+}
+
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tu CSS existente para el formulario aquí */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
